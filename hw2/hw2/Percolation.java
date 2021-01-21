@@ -109,6 +109,10 @@ public class Percolation {
 
     // does the system percolate?
     public boolean percolates(){
+        
+        if(this.percolationGrid[0].length == 1){
+            return this.isOpen(0,0);
+        }
 
         int N = this.percolationGrid[0].length;
         return this.grid.connected(N * N, N*N+1);
