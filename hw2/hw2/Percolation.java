@@ -4,14 +4,17 @@ import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
 
-    WeightedQuickUnionUF  grid ;
-    WeightedQuickUnionUF secondaryGrid;
-    int openSites;
-    int [][] percolationGrid;
+    private WeightedQuickUnionUF  grid ;
+    private WeightedQuickUnionUF secondaryGrid;
+    private int openSites;
+    private int [][] percolationGrid;
 
     // create N-by-N grid, with all sites initially blocked
     public Percolation(int N)
     {
+        if(N <=0){
+            throw new IllegalArgumentException();
+        }
         this.grid = new WeightedQuickUnionUF(N*N+2);
         //Using a second WeightedQuickUnionUF ds to counter backwash by only using one virtual site...
         this.secondaryGrid = new WeightedQuickUnionUF(N*N+1);
