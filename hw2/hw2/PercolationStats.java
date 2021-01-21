@@ -6,9 +6,9 @@ import java.util.ArrayList;
 
 public class PercolationStats {
 
-    double mean = 0;
-    double mu = 0;
-    int T;
+    private double mean = 0;
+    private double mu = 0;
+    private int T;
 
     // perform T independent experiments on an N-by-N grid
     public PercolationStats(int N, int T, PercolationFactory pf){
@@ -74,13 +74,13 @@ public class PercolationStats {
         return this.mean + (1.96*Math.sqrt(this.mu))/Math.sqrt(T);
     }
 
-    public static void main(String[] args) {
-        PercolationStats ps = new PercolationStats(200,100,new PercolationFactory());
-        System.out.println(ps.mean());
-        System.out.println(ps.stddev());
-        System.out.println(ps.confidenceLow());
-        System.out.println(ps.confidenceHigh());
-    }
+//     public static void main(String[] args) {
+//         PercolationStats ps = new PercolationStats(200,100,new PercolationFactory());
+//         System.out.println(ps.mean());
+//         System.out.println(ps.stddev());
+//         System.out.println(ps.confidenceLow());
+//         System.out.println(ps.confidenceHigh());
+//     }
 
 
 }
