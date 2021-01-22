@@ -23,15 +23,15 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T>  {
         this.rb = (T []) new Object[capacity];
     }
 
-//     @Override
-//     public int capacity() {
-//         return this.rb.length;
-//     }
+    @Override
+    public int capacity() {
+        return this.rb.length;
+    }
 
-//     @Override
-//     public int fillCount() {
-//         return this.fillCount;
-//     }
+    @Override
+    public int fillCount() {
+        return this.fillCount;
+    }
 
     /**
      * Adds x to the end of the ring buffer. If there is no room, then
