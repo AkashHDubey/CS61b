@@ -131,7 +131,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T>  {
         public T next() {
 
             T item = rb[next];
-            this.next = Math.floorMod(this.next++,rb.length);
+            this.next = Math.floorMod(++this.next,rb.length);
             count++;
             return item;
 
