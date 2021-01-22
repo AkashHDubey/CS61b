@@ -45,7 +45,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T>  {
         }
 
         this.rb[last] = x;
-        this.last = Math.floorMod(++last,this.capacity());
+        this.last = Math.floorMod(++last,this.rb.length);
         this.fillCount++;
     }
 
@@ -63,7 +63,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T>  {
         T item = this.rb[first];
         this.rb[first] = null;
         this.fillCount--;
-        this.first = Math.floorMod(++first,this.capacity());
+        this.first = Math.floorMod(++first,this.rb.length);
         return item;
     }
 
