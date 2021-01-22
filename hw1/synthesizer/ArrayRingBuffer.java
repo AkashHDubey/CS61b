@@ -8,7 +8,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T>  {
     /* Index for the next enqueue. */
     private int last;
     /* Variable for the fillCount. */
-//     private int fillCount;
+    private int fillCount;
     /* Array for storing the buffer data. */
     private T[] rb;
 
