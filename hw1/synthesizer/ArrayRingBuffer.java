@@ -86,35 +86,35 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T>  {
         return new QuequeIterator();
     }
 
-//     @Override
-//     public boolean equals(Object o){
+    @Override
+    public boolean equals(Object o){
 
-//         if (o == null) { return false; }
-//         if (this == o) { return true; } // optimization
-//         if (this.getClass() != o.getClass()) { return false; }
+        if (o == null) { return false; }
+        if (this == o) { return true; } // optimization
+        if (this.getClass() != o.getClass()) { return false; }
 
-//         ArrayRingBuffer<T> other = (ArrayRingBuffer<T>) o ;
+        ArrayRingBuffer<T> other = (ArrayRingBuffer<T>) o ;
 
-//         if(this.fillCount() != other.fillCount) {
-//             return false;
-//         }
+        if(this.fillCount() != other.fillCount) {
+            return false;
+        }
 
-//         int currIndex = this.last;
-//         int otherIndex = other.last;
+        int currIndex = this.last;
+        int otherIndex = other.last;
 
-//         while (currIndex < this.first && otherIndex < other.first) {
+        while (currIndex < this.first && otherIndex < other.first) {
 
-//             if(!this.rb[currIndex].equals(other.rb[otherIndex])){
-//                 return false;
-//             }
+            if(!this.rb[currIndex].equals(other.rb[otherIndex])){
+                return false;
+            }
 
-//             currIndex = Math.floorMod(++currIndex,this.fillCount);
-//             otherIndex = Math.floorMod(++otherIndex,this.fillCount);
-//         }
+            currIndex = Math.floorMod(++currIndex,this.fillCount);
+            otherIndex = Math.floorMod(++otherIndex,this.fillCount);
+        }
 
-//         return true;
+        return true;
 
-//     }
+    }
 
     private class QuequeIterator implements Iterator<T>{
 
